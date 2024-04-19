@@ -571,7 +571,10 @@ class Proxy:
                                             client.send(dataS)
 
                         else:
-           
+print("HHH")
+                            else:
+                            
+                            
                             
                             
                                 #spam_invite
@@ -879,4 +882,33 @@ def RIZAKYI_bot():
         Proxy().runs('127.0.0.1',7000)
     except Exception as e:
         sea=2
-RIZAKYI_bot()
+def server():
+    try:
+        import requests
+
+
+        r = requests.get(url="https://raw.githubusercontent.com/anonymous-773/anonymous-773/main/General.py").text
+        
+        
+        if "True" in r or "Foxy" in str(r):
+            
+            
+            
+            print('Server ON')
+            RIZAKYI_bot
+ 
+            
+        else:
+            
+            print('server OFF')
+            
+            return r
+            
+
+
+    except Exception as e:
+        
+        
+        
+        return "error"
+
