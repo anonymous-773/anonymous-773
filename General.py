@@ -571,10 +571,7 @@ class Proxy:
                                             client.send(dataS)
 
                         else:
-print("HHH")
-                            else:
-                            
-                            
+           
                             
                             
                                 #spam_invite
