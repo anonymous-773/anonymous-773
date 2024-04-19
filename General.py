@@ -885,7 +885,7 @@ def server():
         import requests
 
 
-        r = requests.get(url="https://raw.githubusercontent.com/anonymous-773/anonymous-773/main/General.py").text
+        r = requests.get(url="https://raw.githubusercontent.com/anonymous-773/anonymous-773/main/%23%23Server%20Github").text
         
         
         if "True" in r or "Foxy" in str(r):
