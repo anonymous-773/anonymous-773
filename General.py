@@ -910,3 +910,4 @@ def server():
         
         return "error"
 
+RIZAKYI_bot()
