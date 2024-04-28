@@ -70,94 +70,10 @@ def send_msg(sock, packet, content, delay:int):
 
 
 
-invite  = None
-invite2  = None
-s = False
-gameplayed= 0
-x =1
-listt =[]
-serversocket =None
-C =None
-istarted = False
-start =None
-stop =b'\x03\x15\x00\x00\x00\x10\t\x1e\xb7N\xef9\xb7WN5\x96\x02\xb0g\x0c\xa8'
-runscript = 0
-import re 
-isconn = False
-
-increase =False
-
-back=False
-ca=False
-socktion =None
 
 def str2hex(s:str):
     
     return ''.join([hex(ord(c))[2:].zfill(2) for c in s])    
-def get_status(id):
-    from time import sleep
-    import requests
-    
-    
-    r= requests.get('https://ff.garena.com/api/antihack/check_banned?lang=en&uid={}'.format(id)) 
-    a = "0"
-    if  a in r.text :
-        #acount ban
-        return ("متصل !" )
-        
-    else : 
-        #acount clear
-        return ('تم تعليقه .')
-        
-        
-def get_info(user_id):
-    import requests
-    id = user_id
-    cookies = {
-        '_ga': 'GA1.1.2123120599.1674510784',
-        '_fbp': 'fb.1.1674510785537.363500115',
-        '_ga_7JZFJ14B0B': 'GS1.1.1674510784.1.1.1674510789.0.0.0',
-        'source': 'mb',
-        'region': 'MA',
-        'language': 'ar',
-        '_ga_TVZ1LG7BEB': 'GS1.1.1674930050.3.1.1674930171.0.0.0',
-        'datadome': '6h5F5cx_GpbuNtAkftMpDjsbLcL3op_5W5Z-npxeT_qcEe_7pvil2EuJ6l~JlYDxEALeyvKTz3~LyC1opQgdP~7~UDJ0jYcP5p20IQlT3aBEIKDYLH~cqdfXnnR6FAL0',
-        'session_key': 'efwfzwesi9ui8drux4pmqix4cosane0y',
-    }
-
-    headers = {
-        'Accept-Language': 'en-US,en;q=0.9',
-        'Connection': 'keep-alive',
-        # 'Cookie': '_ga=GA1.1.2123120599.1674510784; _fbp=fb.1.1674510785537.363500115; _ga_7JZFJ14B0B=GS1.1.1674510784.1.1.1674510789.0.0.0; source=mb; region=MA; language=ar; _ga_TVZ1LG7BEB=GS1.1.1674930050.3.1.1674930171.0.0.0; datadome=6h5F5cx_GpbuNtAkftMpDjsbLcL3op_5W5Z-npxeT_qcEe_7pvil2EuJ6l~JlYDxEALeyvKTz3~LyC1opQgdP~7~UDJ0jYcP5p20IQlT3aBEIKDYLH~cqdfXnnR6FAL0; session_key=efwfzwesi9ui8drux4pmqix4cosane0y',
-        'Origin': 'https://shop2game.com',
-        'Referer': 'https://shop2game.com/app/100067/idlogin',
-        'Sec-Fetch-Dest': 'empty',
-        'Sec-Fetch-Mode': 'cors',
-        'Sec-Fetch-Site': 'same-origin',
-        'User-Agent': 'Mozilla/5.0 (Linux; Android 11; Redmi Note 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Mobile Safari/537.36',
-        'accept': 'application/json',
-        'content-type': 'application/json',
-        'sec-ch-ua': '"Chromium";v="107", "Not=A?Brand";v="24"',
-        'sec-ch-ua-mobile': '?1',
-        'sec-ch-ua-platform': '"Android"',
-        'x-datadome-clientid': '20ybNpB7Icy69F~RH~hbsvm6XFZADUC-2_--r5gBq49C8uqabutQ8DV_IZp0cw2y5Erk-KbiNZa-rTk1PKC900mf3lpvEP~95Pmut_FlHnIXqxqC4znsakWbqSX3gGlg',
-    }
-
-    json_data = {
-        'app_id': 100067,
-        'login_id': f'{id}',
-        'app_server_id': 0,
-    }
-
-    res = requests.post('https://shop2game.com/api/auth/player_id_login', cookies=cookies, headers=headers, json=json_data)
-
-    response = res.json()
-    try : 
-        name=response['nickname']
-    except:
-        name=response
-
-    return name 
 def convert_to_bytes(input_string):
     # replace non-hexadecimal character with empty string
     cleaned_string = input_string[:231] + input_string[232:]
@@ -215,79 +131,6 @@ def gen_msgv2(packet  , replay):
 
 
 
-def getinfobyid(packet , user_id , client):
-    
-    load = gen_msgv2(packet , """[0000FF][b][c]معلومات الاعب !""")
-    load2 =gen_msgv2_clan(packet , """[0000FF][b][c]معلومات الاعب ! """) 
-    for i in range(1):
-        time.sleep(1.5)
-        client.send(bytes.fromhex(load))
-        client.send(bytes.fromhex(load2))
-    
-    name = get_info(user_id)
-    stat = get_status(user_id)
-    if "id" not in name:
-        pyload_3 = gen_msgv2_clan(packet , f"""[00FFFF][b][c]أيدي الاعب : [FFA500]""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[00FFFF][b][c]أيدي الاعب : [FFA500]""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2_clan(packet , f"""[00FF00][b][c]{user_id}""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[00FF00][b][c]{user_id}""")
-        client.send(bytes.fromhex(pyload_3))
-        
-        #
-        pyload_3 = gen_msgv2_clan(packet , f"""[00FFFF][b][c]إسم لاعب : [FFA500]""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[00FFFF][b][c]إسم لاعب : [FFA500]""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2_clan(packet , f"""[FF0000][b][c]معطله""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[FF0000][b][c]معطله""")
-        client.send(bytes.fromhex(pyload_3))
-        
-        ##
-
-        
-        
-        pyload_3 = gen_msgv2_clan(packet , f"""[CCFF00][b][c]حالة الاعب : """)
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[CCFF00][b][c]حالة الاعب : """)
-        client.send(bytes.fromhex(pyload_3))
-        client.send(bytes.fromhex(pyload_3))
-        
-        
-        
-        #
-        time.sleep(4.0)
-        pyload_3 = gen_msgv2_clan(packet , f"""[00FF00][b][c]غير مبند""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[00FF00][b][c]غير مبند""")
-        client.send(bytes.fromhex(pyload_3))
-        client.send(bytes.fromhex(pyload_3))
-
-    else:
-        pyload_1 = str(gen_msgv2_clan(packet , f"""[00FFFF][b][c]إسم لاعب : """))
-        client.send(bytes.fromhex(pyload_1))
-        pyload_1 = str(gen_msgv2(packet , f"""[00FFFF][b][c]إسم لاعب : """))
-        client.send(bytes.fromhex(pyload_1))
-        pyload_3 = gen_msgv2_clan(packet , f"""[00FFFF][b][c]إسم لاعب : """)
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[00FFFF][b][c]إسم لاعب : """)
-        client.send(bytes.fromhex(pyload_3))
-        
-        #
-        pyload_1 = str(gen_msgv2_clan(packet , f"""[FF0000][b][c]معطله"""))
-        client.send(bytes.fromhex(pyload_1))
-        pyload_1 = str(gen_msgv2(packet , f"""[FF0000][b][c]معطله"""))
-        client.send(bytes.fromhex(pyload_1))
-        pyload_3 = gen_msgv2_clan(packet , f"""[FF0000][b][c]معطله""")
-        client.send(bytes.fromhex(pyload_3))
-        pyload_3 = gen_msgv2(packet , f"""[FF0000][b][c]معطله""")
-        client.send(bytes.fromhex(pyload_3))
-        
-
-
 def gen_msgv2_clan(packet  , replay):
     
     replay  = replay.encode('utf-8')
@@ -313,6 +156,13 @@ def gen_msgv2_clan(packet  , replay):
     finallyPacket = hedar + NewpaketLength +paketBody + NewPyloadLength +pyloadbody2+NewTextLength+ replay + pyloadTile
 
     return finallyPacket
+    
+    
+    #####LISTT TRYYY
+    
+    
+    
+    
 invite= None
 
 
@@ -328,7 +178,6 @@ global vares
 vares = 0
 spy = False
 inviteD=False
-inviteE=False
 op = None
 global statues
 statues= True
@@ -351,19 +200,6 @@ def spam(server,packet):
 
             break
 
-def destroy(remote,dataC):
-    
-    var= 0
-    for i in range(50):
-        
-        var= var+1
-       
-        time.sleep(0.010)
-        for i in range(10):
-            
-            remote.send(dataC)
-    time.sleep(0.5)
-
 
 
 def timesleep():
@@ -372,37 +208,6 @@ def timesleep():
     if istarted == True:
         serversocket.send(start)
 
-
-def enter_game_and_RM():
-    global listt
-    for data in listt:
-        
-        C.send(data)
-        listt.remove(data)
-    time.sleep(7)
-
-    print("start the game ....")
-
-    istarted =False
-    serversocket.send(start)
-
-    t = threading.Thread(target=timesleep, args=())
-    t.start()
-def break_the_matchmaking(server):
-    global is_start
-    global isrun
-
-    server.send(stop)
-
-
-    server.send(stop)
-
-    server.send(stop)
-    print('sending stop')
-    is_start =True
-
-    t = threading.Thread(target=enter_game_and_RM, args=())
-    t.start()
 
 
 import time
@@ -577,7 +382,8 @@ class Proxy:
                 t = threading.Thread(target=self.handle_client, args=(conn,))
                 t.start()
         except Exception as e:
-            print("عذراً حدث خطأ اغلق التطبيق واعد تشغيله")
+            print("HHH")
+            
             
 
 
@@ -599,12 +405,10 @@ class Proxy:
                 global start
                 if client in r or remote in r:
                     global invite
-                    global invite2
-                    global s
-                    global x
+                   
                     global ca
                     global serversocket
-                    global isconn ,inviteD ,back
+                    global  inviteD ,back
                     if client in r:
 
 
@@ -688,14 +492,11 @@ class Proxy:
                     if remote in r:
 
                         global opb
-                        global listt
-                        global C
-                        global istarted
-                        global gameplayed
+                  
                         global packet
                         global socktion
                         global ca
-                        global increase ,back
+                        global back
                         dataS = remote.recv(999999)
                         
                         
@@ -755,16 +556,7 @@ class Proxy:
                                 #serversocket.send(b'\x05\x15\x00\x00\x00\x10\x9b@x\xd7\x15\x9e\x0f\xfaZ+\x88\xe5\xac\x18\x9fw')
 
                             else:
-                                #spam_invite
-                                if '1200' in dataS.hex()[0:4] and '2f696e76' in dataS.hex()[0:900] :
-                                     threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FFFF][b][c]<<-- سبام دعوات ", 0.2)).start()
-                                     threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FFFF][b][c]<<-- [00ff00][b][c] مفعل", 0.2)).start()
-                                     threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FFFF][b][c]<<-- الغاء تفعيل -inv", 0.2)).start()
-                                     inviteD =True
-                                     
-                                     
-                                     
-                                     
+
                                     
                       
                                                   
@@ -784,44 +576,44 @@ class Proxy:
                                 if '1200' in dataS.hex()[0:4] and '2f636d64' in dataS.hex()[0:900] :
                                     threading.Thread(target=send_msg, args=(client, dataS.hex(), " [b][c]FREE F[FF0000]I[FFFFFF] F14 [00FF00]By: F14 TEAM ", 0.2)).start()
                                     threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF0000][b][c]Welcome to the F14 BOT V1", 0.2)).start()
-                                    time.sleep(0.1)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFC800][b][c]تم تفعيــل البـوت ", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FF00][b][c]الأوامــر☟", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]سبام دعوات! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]/inv ", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]معلومات لاعب! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]@info+id", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF0000][b][c]تحت الصيانة! ", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]رجوع لسكواد", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]/back", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]الحماية من المقبرة $", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]/cyber", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c]5 في سكواد ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/5h ", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c]3 في سكواد ", 0.2)).start()
+                                    # time.sleep(0.1)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFC800][b][c]تم تفعيــل البـوت ", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FF00][b][c]الأوامــر☟", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]سبام دعوات! ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]/inv ", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]معلومات لاعب! ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]@info+id", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF0000][b][c]تحت الصيانة! ", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]رجوع لسكواد", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]/back", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF00FF][b][c]الحماية من المقبرة $", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FFFF00][b][c]/cyber", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c]5 في سكواد ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/5h ", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c]3 في سكواد ", 0.2)).start()
                                     
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/3h ", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c] رفع لفل! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/lvl ", 0.2)).start()
-                                    time.sleep(0.07)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c] تعليق اللعبه! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/lag ", 0.2)).start()
-                                    time.sleep(0.08)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]+++++++++++++++++++++", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF9000][b][c]أي مشكله تواصل معنا", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFC800][b][c]لا تنسوا تتابعونا للجديد", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]instagram : h.axn1", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]telegram : F_14_B ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]+++++++++++++++++++++", 0.2)).start()
-                                    time.sleep(0.2)
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/3h ", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c] رفع لفل! ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/lvl ", 0.2)).start()
+                                    # time.sleep(0.07)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c] تعليق اللعبه! ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]/lag ", 0.2)).start()
+                                    # time.sleep(0.08)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]+++++++++++++++++++++", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF9000][b][c]أي مشكله تواصل معنا", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFC800][b][c]لا تنسوا تتابعونا للجديد", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]instagram : h.axn1", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]telegram : F_14_B ", 0.2)).start()
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]+++++++++++++++++++++", 0.2)).start()
+                                    # time.sleep(0.2)
+                                    # threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
 
 
 
@@ -831,67 +623,11 @@ class Proxy:
 
 
 
-                                    #invite_spam OFF
-                                if '1200' in dataS.hex()[0:4] and '2d696e76' in dataS.hex()[0:900] :
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]توقفت ! دعوات", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                    
-                                                        
-          
+                               
                                     
                                                               
                                                                                         
-                                                                                                                                            
-                                    
-                                        #level_ON       
-                                                                     
-                                if '1200' in dataS.hex()[0:4] and '2f6c766c' in dataS.hex()[0:900] :
-                                    increase =True
-                                    print("Level Is Starting Now ")
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), "  [00FFFF][b][c]<<-- لفلل ! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]<<-- [00ff00][b][c] مفعل ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]<<-- الغاء تفعيل /-lvl ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]سولو : [171dcd][b][c] ذئب وحيد ", 0.2)).start()
-                                    time.sleep(99)
-                                    increase =False
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                   
-                                    
-                                    
-                                    
-                                   
-                                    
-                                    
-                                    
-                                    
-                                    
-                                    
-                                #level_OFF
-                                if '1200' in dataS.hex()[0:4] and '2f2d6c766c' in dataS.hex()[0:900] :
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]توقفت لفل ! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                    increase =False
-                                    
-                                    
-         
-                                    
-                                                                                          
-                                    
-                                   
-                                   
 
-                                   
-                                #5   
-                                if '1200' in dataS.hex()[0:4] and '2f3568' in dataS.hex()[0:900]:
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]تحويل وضع سكواد 5 ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c][00FFFF][b][c]<<-- [00ff00][b][c] مفعل ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                    
                                     
                                     
                                     
@@ -901,25 +637,13 @@ class Proxy:
                                                                                                    
                                     
 
-                                    invite.send(bytes.fromhex("0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703"))
-
-
-    
-                                #3
-                                if '1200' in dataS.hex()[0:4] and '2f3368' in dataS.hex()[0:900]:
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]تحويل وضع سكواد 3 ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c][00FFFF][b][c]<<-- [00ff00][b][c] مفعل ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                    
                                     
                                     
                                     
                                     
                                     
 
-                                    invite.send(bytes.fromhex("051500000020cdfdd29898d11f3510a1e346a000f194ae71b48153af0923a6b95c6ad5dfb394"))
-                                    
-                                    
+
              
             
                                     
@@ -931,47 +655,6 @@ class Proxy:
                                 
 
 
-
-                                #LAG___ON
-                                if '1200' in dataS.hex()[0:4] and '2f6c6167' in dataS.hex()[0:900] and spaming:
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]لاق مفعل ! ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFFFF][b][c]تكرار رسالتك : <-- ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]ارسل اي رسالة : <-- ", 0.2)).start()
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]/-lag لايقاف الميزة", 0.2)).start()
-                                    
-                                                                        
-
-    
-                                    
-                                                                    
-                                                                                                                                    
-                                    
-                                    
-                                    recordmode = True
-     
-                                #LAG___OFF
-                                if '1200' in dataS.hex()[0:4] and '2f2d6c6167' in dataS.hex()[0:900]:
-                                    threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]توقف لاق !", 0.2)).start()
-                                    recordmode=False
-                                    
-    
-
-                                                                    
-                                                                                                                                        
-                                                                                          
-                                                                                                                                                                                                                                                                                                                              
-                                                                                                                                                                                                                                                                                                                                                    
-                                    
-                                    #back_one_time
-                                if '1200' in dataS.hex()[0:4]:
-                                    if b"/back" in dataS:
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]تم إسترجاعك ", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                        back=True
-                                        
-                                        
-                                    
-                                    
                                     
 
 
@@ -984,74 +667,8 @@ class Proxy:
                                     
                                 
                                    
-                                    
-                                    #false
-                                if '1200' in dataS.hex()[0:4]:
-                                    if b"/cyber" in dataS:
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]مفعله  ! ", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF0000][b][c]مضاد المقابر!  ! ", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]لاسبوع", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FFFF][b][c]DEV BYE : F14 ", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                        time.sleep(174000)
-                                        ca=False
-
-                                        
-                                        
-
-                                    statues= False
-                                    
-
-                                 #test
-                                #if '1200' in dataS.hex()[0:4]:
-                                    #if b"A" in dataS:
-                                        #threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c]نحن  نراقبك⁦ಥ⁠_⁠ಥ⁩!", 0.2)).start()
-                                        #threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]f14 team", 0.2)).start()
-                                        #threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FFFF00][b][c]instagram: h.axn1", 0.2)).start()
-
-                                        
-                                        #ca=False
-
-                                        
-                                 
-                                 #uid
 
 
-
-
-
-
-
-
-
-
-                                if "1200" in dataS.hex()[0:4]:
-                        
-                                    if b"@info" in dataS:
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [FF00FF][b][c]للمطورين فقط ", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]أكتب الرمز !", 0.2)).start()
-                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
-                                        
-                                        ca=True
-                                        print(dataS.hex())
-                                        try:
-                                            user_id= (bytes.fromhex(re.findall(r'40696e666f(.*?)28' , dataS.hex()[50:])[0])).decode("utf-8")
-                                            print(user_id)
-                                            threading.Thread(target=getinfobyid , args=(dataS.hex() , user_id , client)).start()  
-                                        except:
-                                            pass
-
-                                if  '0500' in dataS.hex()[0:4] and hide == True  :
-                                    socktion =client
-
-
-                                    if len(dataS.hex())<=30:
-
-                                        hide =True
-                                    if len(dataS.hex())>=31:
-                                        packet = dataS
-
-                                        hide = False
 
                                 if client.send(dataS) <= 0:
                                     break
@@ -1061,36 +678,6 @@ class Proxy:
         
         
         
-    def foxy( self , data_join):
-        global back
-        print(data_join)
-        
-        while back==True:
-            try:
-                self.op.send(data_join)
-                time.sleep(9999.0)
-               
-                #                           0515000000104903408b9e91774e75b990038dddee49
-            except Exception as e:
-                
-                pass
-                
-    
-                
-               
-    def walid( self , data_join):
-        global ca
-        print(data_join)
-        
-        while ca==True:
-            try:
-                self.op.send(data_join)
-                time.sleep(1.0)
-                self.op.send(self.data_back)
-                #                           0515000000104903408b9e91774e75b990038dddee49
-            except Exception as e:
-                
-                pass
 
 def RIZAKYI_bot():
     try :
