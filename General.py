@@ -70,6 +70,26 @@ def send_msg(sock, packet, content, delay:int):
 
 
 
+invite  = None
+invite2  = None
+s = False
+gameplayed= 0
+x =1
+listt =[]
+serversocket =None
+C =None
+istarted = False
+start =None
+stop =b'\x03\x15\x00\x00\x00\x10\t\x1e\xb7N\xef9\xb7WN5\x96\x02\xb0g\x0c\xa8'
+runscript = 0
+import re 
+isconn = False
+
+increase =False
+
+back=False
+ca=False
+socktion =None
 
 def str2hex(s:str):
     
@@ -564,7 +584,16 @@ class Proxy:
 
                                     
                                     
-                                    
+                                   
+                                    #back_one_time
+                                if '1200' in dataS.hex()[0:4]:
+                                    if b"/back" in dataS:
+                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), " [00FF00][b][c]تم إسترجاعك ", 0.2)).start()
+                                        threading.Thread(target=send_msg, args=(client, dataS.hex(), "[00FF00][b][c]F14 TEAM Official [FFC800][b][c]Ⓥ ", 0.2)).start()
+                                        
+                                        
+                                        
+                             
                                     
                                     
                                     
