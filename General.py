@@ -1377,9 +1377,15 @@ class Proxy:
                         	newdataS2 = dataplus
                         	getin = client
                         	try:
-                        	    getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][F7FE2E]Room password :""",newdataS2)))
-                        	    getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][66FF00]{romcode}""",newdataS2)))
-                        	    getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][FF00FF]PEGA[00FFFF]SUS V2""",newdataS2)))
+                        		
+                        		threading.Thread(target=send_msg, args=(client, dataS.hex(), "Room password :", 0.2)).start()	
+                                
+                        		threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][66FF00]{romcode}", 0.2)).start()	
+                                
+                                
+                        	    # getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][F7FE2E]Room password :""",newdataS2)))
+                        	    # getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][66FF00]{romcode}""",newdataS2)))
+                        	    # getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][FF00FF]PEGA[00FFFF]SUS V2""",newdataS2)))
                         	except:
                         		threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF00FF]Error !", 0.2)).start()
                         if b"@FDNR" in dataS and comand == True:
@@ -1391,17 +1397,17 @@ class Proxy:
                         	match = re.search(r'\@\@(.*?)\(', text)
                         	number=match.group(1)
                         
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FFC800][b][c]Player info..",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+]Player id :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{number}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+]Player Name :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getname(number)}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] Player Status :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{get_status(number)}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] Player Server",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getreg(number)}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
+                        	getin.send(bytes.fromhex(gen_msgv3(f"[FFC800][b][c]Player info..",newdataS2)))
+                        	getin.send(bytes.fromhex(gen_msgv3(f"[FF8000ً][b][c][+]Player id :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{number}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+]Player Name :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getname(number)}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] Player Status :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{get_status(number)}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] Player Server",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getreg(number)}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
                         if b"PD@@" in dataS and comand == True:
                         	newdataS2 = dataS.hex()
                         	getin = client
