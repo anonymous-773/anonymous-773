@@ -89,7 +89,14 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, *sys.argv)
         
-
+def respons( client , data ,text, respons):
+    data=bytes(data)
+    data = bytes.fromhex(data.hex().replace(text.hex(),respons.hex()))
+    time.sleep(1.5)
+    client.send((data))
+                    
+                    
+                    
 def send_msg(sock, packet, content, delay:int):
         time.sleep(delay)
         try:
@@ -98,6 +105,9 @@ def send_msg(sock, packet, content, delay:int):
         except Exception as e:
                 ##print(e)
                 pass
+                
+                
+                
 roomretst = False
 gameplayed= 0
 listt =[]
@@ -2262,6 +2272,9 @@ class Proxy:
                            clieee.send(lag)
                         if client.send(dataS) <= 0:
                             break
+                            
+                            
+                            
     def foxy( self , data_join):
         global back
         while back==True:
