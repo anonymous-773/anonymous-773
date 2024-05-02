@@ -893,11 +893,11 @@ class Proxy:
             # lag room
 
 #            global lagroomsw
-#            def foxy( self , data_join):
-#                global back
-#                while back==True:
-#                	self.op.send(data_join)
-#                	time.sleep(9999.0)
+            def foxy( self , data_join):
+                global back
+                while back==True:
+                	self.op.send(data_join)
+                	time.sleep(9999.0)
 
             #spam invs
 
@@ -1236,6 +1236,8 @@ class Proxy:
                         if b"@FD5" in dataS and comand == True:
                             op.send(bytes.fromhex("05000000200826140492101088b3bbb1032a0608"))
                             
+                            #05000000200826140492101088b3bbb1032a0608
+                            #0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703
                              
 #start klach squad
                         if b"@FD3" in dataS and comand == True:
@@ -1257,13 +1259,13 @@ class Proxy:
                         if b"start" in dataS and comand == True:
                                 newdataS2 = dataS.hex()
                                 getin = client
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "Welcom To FoxyBot ", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF00FF]PEGA[00FFFF]Instagram : @the_foxy999", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF00FF]Welcom To FoxyBot ", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF00FF]Instagram :[00FFFF]  @the_foxy999", 0.2)).start()
                                 time.sleep(0.3)
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c]Mode by [F7FE2E]Free For AllⓋ", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c]Mode by [F7FE2E]The Foxy Ⓥ", 0.2)).start()
                                 threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF8000][b][c]Comands :", 0.2)).start()
                                 time.sleep(0.3)
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """+5 [00FFFF] GET Squad 5""", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+5 [00FFFF] GET Squad 5""", 0.2)).start()
                                 threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+3 [d44904]GET Squad 3""", 0.2)).start()
                                 # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+spam[0000FF]Spam Messages""", 0.2)).start()
                                 threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+inv [d97a5b]Spam Invitations""", 0.2)).start()
@@ -1909,343 +1911,343 @@ class Proxy:
                             # dor = dataS.hex()
                             # raks = dor.replace(id_admin, id_view)
                             # MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA1" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*1088b3bbb1032a0608*"
+                         # if b"@FDTA1" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*1088b3bbb1032a0608*"
                             
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
                             
-                        if b"@FDTA2" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*1098fbb8b1032a0608*"
+                        # if b"@FDTA2" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*1098fbb8b1032a0608*"
                             
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
 
-                        if b"@FDTA3" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*109bfbb8b1032a0608*"
+                        # if b"@FDTA3" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*109bfbb8b1032a0608*"
                             
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA4" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10d2c2bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA5" in dataS and comand == True:
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTA4" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10d2c2bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTA5" in dataS and comand == True:
 
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10dcc2bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA6" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10bbfbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA7" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*109284bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))  
-                        if b"@FDTA8" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*109cfbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA9" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10aefcbab1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10dcc2bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTA6" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10bbfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTA7" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*109284bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))  
+                        # if b"@FDTA8" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*109cfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTA9" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10aefcbab1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
 
-                        if b"@FDTB1" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10fffab8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTB2" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10ff8bbbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTB3" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*1095fbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTB4" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*108bfbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTB1" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10fffab8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTB2" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10ff8bbbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTB3" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*1095fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTB4" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*108bfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
 
 
-                        if b"@FDTB5" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10edbabbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTB6" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10a2fbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTB7" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*1084fbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                            # HAYA
-                        if b"@FDTC1" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10b9cabbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTC2" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10ca9bbbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTC3" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*109e84bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTC4" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*109684bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTC5" in dataS and comand == True:
-                            id = dataS.hex()[12:22]
-                            dor = "050000002008*100520162a1408*10d6c2bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA1//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*1088b3bbb1032a0608*"
+                        # if b"@FDTB5" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10edbabbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTB6" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10a2fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTB7" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*1084fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                            # # HAYA
+                        # if b"@FDTC1" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10b9cabbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTC2" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10ca9bbbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTC3" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*109e84bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTC4" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*109684bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDTC5" in dataS and comand == True:
+                            # id = dataS.hex()[12:22]
+                            # dor = "050000002008*100520162a1408*10d6c2bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA1//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*1088b3bbb1032a0608*"
                             
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA2//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*1098fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA2//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*1098fbb8b1032a0608*"
                             
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA3//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*109bfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA3//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*109bfbb8b1032a0608*"
                             
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA4//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10d2c2bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA5//" in dataS and comand == True:
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA4//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10d2c2bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA5//" in dataS and comand == True:
 
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10dcc2bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA6//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10bbfbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA7//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*109284bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))  
-                        if b"@FDRA8//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*109cfbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRA9//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10aefcbab1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10dcc2bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA6//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10bbfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA7//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*109284bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))  
+                        # if b"@FDRA8//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*109cfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRA9//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10aefcbab1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
 
-                        if b"@FDRB1//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10fffab8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRB2//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10ff8bbbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRB3//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*1095fbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRB4//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*108bfbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRB1//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10fffab8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRB2//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10ff8bbbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRB3//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*1095fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRB4//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*108bfbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
 
 
-                        if b"@FDRB5//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10edbabbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRB6//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10a2fbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRB7//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*1084fbb8b1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                            # haya
-                        if b"@FDRC1//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10b9cabbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRC2//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10ca9bbbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRC3//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*109e84bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRC4//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*109684bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDRC5//" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\/\/(.*?)\(', text)
-                            number=match.group(1)
-                            accountid = number
-                            id = get_inc(accountid)
-                            dor = "050000002008*100520162a1408*10d6c2bbb1032a0608*"
-                            raks = dor.replace('*', id)
-                            MainC.send(bytes.fromhex(raks))
-                        if '0e00' in dataS.hex()[0:4] and roomretst == True and "http" in str(dataS):
+                        # if b"@FDRB5//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10edbabbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRB6//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10a2fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRB7//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*1084fbb8b1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                            # # haya
+                        # if b"@FDRC1//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10b9cabbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRC2//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10ca9bbbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRC3//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*109e84bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRC4//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*109684bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if b"@FDRC5//" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\/\/(.*?)\(', text)
+                            # number=match.group(1)
+                            # accountid = number
+                            # id = get_inc(accountid)
+                            # dor = "050000002008*100520162a1408*10d6c2bbb1032a0608*"
+                            # raks = dor.replace('*', id)
+                            # MainC.send(bytes.fromhex(raks))
+                        # if '0e00' in dataS.hex()[0:4] and roomretst == True and "http" in str(dataS):
 
-                            invtoroom = client
-                            invtoroompacket = dataS
+                            # invtoroom = client
+                            # invtoroompacket = dataS
                         try:
                             
 
@@ -2261,13 +2263,13 @@ class Proxy:
                               # #      break
                         # if add_yout == True:
                             # add_yout = False
-                #           from time import sleep
-#                            try:
-#                                for h in yout_list:
-#                                    MainC.send(h)
-#                                    sleep(0.2)
-#                            except:
-#                                pass
+                            # from time import sleep
+                            # try:
+                                # for h in yout_list:
+                                    # MainC.send(h)
+                                    # sleep(0.2)
+                            # except:
+                                # pass
                         if b'/ret' in dataS and '1200' in dataS.hex()[0:4]:
                            clieee.send(lag)
                         if client.send(dataS) <= 0:
