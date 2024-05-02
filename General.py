@@ -1,19 +1,19 @@
-B = '''[1;30m'''
-R = '''[1;31m'''
-G = '''[1;32m'''
-Y = '''[1;33m'''
-Bl = '''[1;34m'''
-P = '''[1;35m'''
-C = '''[1;36m'''
-W = '''[1;37m'''
-OB = '''[40m'''
-OR = '''[41m'''
-OG = '''[42m'''
-OY = '''[43m'''
-OBl = '''[44m'''
-OP = '''[45m'''
-OC = '''[46m'''
-OW = '''[47m'''
+# B = '''[1;30m'''
+# R = '''[1;31m'''
+# G = '''[1;32m'''
+# Y = '''[1;33m'''
+# Bl = '''[1;34m'''
+# P = '''[1;35m'''
+# C = '''[1;36m'''
+# W = '''[1;37m'''
+# OB = '''[40m'''
+# OR = '''[41m'''
+# OG = '''[42m'''
+# OY = '''[43m'''
+# OBl = '''[44m'''
+# OP = '''[45m'''
+# OC = '''[46m'''
+# OW = '''[47m'''
 import datetime
 import codecs
 import random
@@ -85,9 +85,9 @@ def gen_msgv3(packet , replay):
 
         return str(finallyPacket)
         
-def restart_program():
-    python = sys.executable
-    os.execl(python, python, *sys.argv)
+# def restart_program():
+    # python = sys.executable
+    # os.execl(python, python, *sys.argv)
         
 # def respons( client , data ,text, respons):
     # data=bytes(data)
@@ -109,19 +109,19 @@ def send_msg(sock, packet, content, delay:int):
                 
                 
 roomretst = False
-gameplayed= 0
-listt =[]
+# gameplayed= 0
+# listt =[]
 serversocket =None
 remotesockett = None
 clienttsocket =None
-istarted = False
-start =None
-stop =b'\x03\x15\x00\x00\x00\x10\t\x1e\xb7N\xef9\xb7WN5\x96\x02\xb0g\x0c\xa8'
-increase =False
+# istarted = False
+# start =None
+# stop =b'\x03\x15\x00\x00\x00\x10\t\x1e\xb7N\xef9\xb7WN5\x96\x02\xb0g\x0c\xa8'
+# increase =False
 socktion =None
 SOCKS_VERSION = 5
 packet =b''
-full = False
+# full = False
 #
 ####
 
@@ -459,16 +459,16 @@ def nret():
     except:
         pass
 
-def sendi():
-    global snv,dataC
-    while True:
-        if '0515' in dataC.hex()[0:4] and len(dataC.hex()) >= 900:
-            for i in range(400):
-                snv.send(dataC)
-                for k in range(1):
-                    time.sleep(0.001)
+# def sendi():
+    # global snv,dataC
+    # while True:
+        # if '0515' in dataC.hex()[0:4] and len(dataC.hex()) >= 900:
+            # for i in range(400):
+                # snv.send(dataC)
+                # for k in range(1):
+                    # time.sleep(0.001)
 
-            break
+            # break
 
 ###
 
@@ -487,7 +487,7 @@ recordmode= False
 sendpackt=False
 back = False
 spy = False
-resasa =False
+
 id_view = None
 rolp = False
 comand =True
@@ -505,15 +505,15 @@ returntoroom = False
 
 
 
-roomp = False
+# roomp = False
 number = 0
 
-def roompass():
-    global roomp
-    if roomp == True:
-        return True
-    else:
-        return False
+# def roompass():
+    # global roomp
+    # if roomp == True:
+        # return True
+    # else:
+        # return False
 
 def roomst():
     if roompass() == True:
@@ -522,12 +522,12 @@ def roomst():
             ##print(str(number))
         except:
             return "The FoxyBOT"
-def xmodz(xmod):
+# def xmodz(xmod):
 
-      for k in range(90000):
-          xmod.send(b'\x0e\x15\x00\x00\x00P\xd6\xd5\x19\x00+\xdc\xc6M\xe8\xa4,\x1a\xae\xdf\\:\xaa\xcf|\xe6\x94\xef\xbf\xc1\xf1\x1f\x02h\t\xb6%\xe7\x93aM\xd1?\xfa8\xee\xccUO\xf3 \xa6\x1b\x8a\xc6\x96\x99\xa8\xeb^\xda\xb7;9\xe9\xd9\x10zP\xd5\xe0\x83\xa2\xbc\x8c\x01\xfb\xadd\xdb\xcek\x85\x81\xcdP')
-          for l in range(1):
-              time.sleep(0.05)
+      # for k in range(90000):
+          # xmod.send(b'\x0e\x15\x00\x00\x00P\xd6\xd5\x19\x00+\xdc\xc6M\xe8\xa4,\x1a\xae\xdf\\:\xaa\xcf|\xe6\x94\xef\xbf\xc1\xf1\x1f\x02h\t\xb6%\xe7\x93aM\xd1?\xfa8\xee\xccUO\xf3 \xa6\x1b\x8a\xc6\x96\x99\xa8\xeb^\xda\xb7;9\xe9\xd9\x10zP\xd5\xe0\x83\xa2\xbc\x8c\x01\xfb\xadd\xdb\xcek\x85\x81\xcdP')
+          # for l in range(1):
+              # time.sleep(0.05)
 
 
 def lagroom(cli,lg):
@@ -537,15 +537,15 @@ def lagroom(cli,lg):
                 cli.send(b'\x0e\x15\x00\x00\x00\x10\x02\x92L\xf4)[\xa9xk^\xca\xf6\x8a\x80~w')
                 time.sleep(1)
                 cli.send(lg)
-#-
+
 from time import sleep
 
 global cmode
-cmode = False
-def crmode(value7):
-    global cmode
-    cmode = value7
-    return cmode
+# cmode = False
+# def crmode(value7):
+    # global cmode
+    # cmode = value7
+    # return cmode
 
 
 def crazymode(keam,pckt1,pckt):
@@ -554,55 +554,55 @@ def crazymode(keam,pckt1,pckt):
         	keam.send(pckt)
         	time.sleep(2)
         	keam.send(pckt1)
-def randm(keam,pckt1,pckt):
-        for i in range(3):
-        	time.sleep(1)
-        	keam.send(pckt)
-        	time.sleep(1)
-        	keam.send(pckt1)
-#---------------------
+# def randm(keam,pckt1,pckt):
+        # for i in range(3):
+        	# time.sleep(1)
+        	# keam.send(pckt)
+        	# time.sleep(1)
+        	# keam.send(pckt1)
+# #---------------------
 
-def find_name_and_value(value):
-    if value == 1000 or (value < 1050 and value > 1000):
-        return "Brounze1", 1000
-    elif value == 1050 or (value < 1150 and value > 1050):
-        return "Brounze2", 1050
-    elif value == 1150 or (value < 1250 and value > 1150):
-        return "Brounze3", 1150
-    elif value == 1250 or (value < 1350 and value > 1250):
-        return "Silver1", 1250
-    elif value == 1350 or (value < 1450 and value > 1350):
-        return "Silver2", 1350
-    elif value == 1450 or (value < 1550 and value > 1450):
-        return "Silver3", 1450
-    elif value == 1550 or (value < 1663 and value > 1550):
-        return "Gold1", 1550
-    elif value == 1663 or (value < 1788 and value > 1663):
-        return "Gold2", 1663
-    elif value == 1788 or (value < 1913 and value > 1788):
-        return "Gold3", 1788
-    elif value == 1913 or (value < 2038 and value > 1913):
-        return "Gold4", 1913
-    elif value == 2038 or (value < 2163 and value > 2038):
-        return "Platinum1", 2038
-    elif value == 2163 or (value < 2288 and value > 2163):
-        return "Platinum2", 2163
-    elif value == 2288 or (value < 2413 and value > 2288):
-        return "Platinum3", 2288
-    elif value == 2413 or (value < 2538 and value > 2413):
-        return "Platinum4", 2413
-    elif value == 2538 or (value < 2675 and value > 2538):
-        return "Diamond1", 2538
-    elif value == 2675 or (value < 2825 and value > 2675):
-        return "Diamond2", 2675
-    elif value == 2825 or (value < 2975 and value > 2825):
-        return "Diamond3", 2825
-    elif value == 2975 or (value < 3125 and value > 2975):
-        return "Diamond4", 2975
-    elif value == 3125 or value > 3125:
-        return "Heroic", 3125
-    else:
-        return "Value not found", None
+# def find_name_and_value(value):
+    # if value == 1000 or (value < 1050 and value > 1000):
+        # return "Brounze1", 1000
+    # elif value == 1050 or (value < 1150 and value > 1050):
+        # return "Brounze2", 1050
+    # elif value == 1150 or (value < 1250 and value > 1150):
+        # return "Brounze3", 1150
+    # elif value == 1250 or (value < 1350 and value > 1250):
+        # return "Silver1", 1250
+    # elif value == 1350 or (value < 1450 and value > 1350):
+        # return "Silver2", 1350
+    # elif value == 1450 or (value < 1550 and value > 1450):
+        # return "Silver3", 1450
+    # elif value == 1550 or (value < 1663 and value > 1550):
+        # return "Gold1", 1550
+    # elif value == 1663 or (value < 1788 and value > 1663):
+        # return "Gold2", 1663
+    # elif value == 1788 or (value < 1913 and value > 1788):
+        # return "Gold3", 1788
+    # elif value == 1913 or (value < 2038 and value > 1913):
+        # return "Gold4", 1913
+    # elif value == 2038 or (value < 2163 and value > 2038):
+        # return "Platinum1", 2038
+    # elif value == 2163 or (value < 2288 and value > 2163):
+        # return "Platinum2", 2163
+    # elif value == 2288 or (value < 2413 and value > 2288):
+        # return "Platinum3", 2288
+    # elif value == 2413 or (value < 2538 and value > 2413):
+        # return "Platinum4", 2413
+    # elif value == 2538 or (value < 2675 and value > 2538):
+        # return "Diamond1", 2538
+    # elif value == 2675 or (value < 2825 and value > 2675):
+        # return "Diamond2", 2675
+    # elif value == 2825 or (value < 2975 and value > 2825):
+        # return "Diamond3", 2825
+    # elif value == 2975 or (value < 3125 and value > 2975):
+        # return "Diamond4", 2975
+    # elif value == 3125 or value > 3125:
+        # return "Heroic", 3125
+    # else:
+        # return "Value not found", None
 def stoplg(rsend,leg,resocket,clsocket):
    preventlag = False
    for i in range(1):
@@ -614,24 +614,25 @@ def stoplg(rsend,leg,resocket,clsocket):
             for k in range(1):
                rsend.send(leg)
 
-global spprspm
-def spprspm(server,packet):
-        while True:
-            time.sleep(0.014)
-            server.send(packet)
-            if msgs == False:
-                break
 
-fivesq = False
-def fivepe(value23):
-    global fivesq
-    fivesq = value23
-    return fivesq
+# global spprspm
+# def spprspm(server,packet):
+        # while True:
+            # time.sleep(0.014)
+            # server.send(packet)
+            # if msgs == False:
+                # break
+
+# fivesq = False
+# def fivepe(value23):
+    # global fivesq
+    # fivesq = value23
+    # return fivesq
 
 
 
-def runsnv():
-    threading.Thread(target=sendi).start()
+# def runsnv():
+    # threading.Thread(target=sendi).start()
 
 SOCKS_VERSION = 5   
 
@@ -963,7 +964,7 @@ class Proxy:
                     global mess
                     
                     global comand
-                    global resasa
+                 
                     global msgs
                     global recordmode
                     global MainC
@@ -993,23 +994,15 @@ class Proxy:
                        teams = client
                        packett = dataC                    
 
-                    if resasa ==True and '1215' in dataC.hex()[0:4]:
-                      
-                         while True:
-                                            time.sleep(0.10)
-                                            op.send(bytes.fromhex("0315000001c06c03e17766c196a7e5734b2ffc686550e2f36b0582a92cde34b8dd2fa1447f900cf94ed69fc8214ea2974452331d769dcc1ccfac654a5ac6cedd5c049e30c124a3790970ecc0f5937a841a6c61781ce368a854c6ea9d52ed3e585f9dae5b09c3a8f20f5616dcbf6b09866dde0ecd468f343bbcf8fc8e64e8a4baa04a0055429b80b7a9c3c9dcb1154cb59332ffe0ee01f2ea048357e3994e463248f86d00583617a191ea3a04ba6654c814f0d6cb62e132a68e633bb7dbc3f71dbdeba9eff0d2a67052c74e9ebfc5b31205274c2abfe1bd0d6ed9d6945ef548ed8c60848e4e79b43f4abff0db31cd216455f5d718dc4463c52c9c2453f52d0645bb14275167cd4dfc51dcd633d39a2dff56cea674351bbf1ed637677c05d203017bbf1cb5032cf02e298b800d625c998d49caadad1bf6899e37425b58a7c5171fc213647648422ae0e7fa57432cd9b2e03b2a333b9456c7de61e1af62c0bd1f66e1071ddd346c10c01ea92db82acd90f75964fecec88be8388bdd2a7b0e6e7cd5bbd425e54e0b7a54587bc975758dca65dcf1630090e23efdc62f8f82fadeeac71ba4ca68410d60b50a9d81140f6db1f2cc0bc54258ef0ca9e6377656a1985c468d812bde7ae1"))
-                                           
-                                            if resasa ==False:
-                                                break
-                                            
-                    if msgs ==True:
-                        if '1215' in dataC.hex()[0:4]:
-                            for i in range(10):
-                                remote.send(dataC)
-                            global spprspm
-                            b = threading.Thread(target=spprspm, args=(remote,dataC))
-                            b.start()
-                    #####
+                                     
+                    # if msgs ==True:
+                        # if '1215' in dataC.hex()[0:4]:
+                            # for i in range(10):
+                                # remote.send(dataC)
+                            # global spprspm
+                            # b = threading.Thread(target=spprspm, args=(remote,dataC))
+                            # b.start()
+                    # #####
                     if port == 39698:
                             levelplus = remote
                     if  "39699" in str(remote) :
@@ -1091,6 +1084,7 @@ class Proxy:
                             
                             full = False
 
+
                         if '0e15' in dataC.hex()[:4] and returntoroom ==True:
                             remote.send(lag)
                             returntoroom =False
@@ -1121,17 +1115,16 @@ class Proxy:
                                     pass
                                 restartsock = False
 
-                        try:
+                        # try:
                              
-                             if '1200' in dataS.hex()[0:4] and b'/info' in dataS and comand == True: #/back
-                                # ##("Done")
-                                 backto = client
-                                 newbackdataS = dataS.hex()
-                                 full = True
-                                # ##(full)
+                             # if '1200' in dataS.hex()[0:4] and b'/info' in dataS and comand == True: #/back
+                                # # ##("Done")
+                                 # backto = client
+                                 # newbackdataS = dataS.hex()
+                                 # full = True
+                                # # ##(full)
 
-                        except:
-                            pass
+                        
 
                         if cmodeloop==True:
                             threading.Thread(target=crazymode,args=(team,packett1,packett)).start()
@@ -1175,22 +1168,20 @@ class Proxy:
                                     client.close()
 
 
-                        if '0e00' in dataS.hex()[0:4]:
-                           for i in range(10):
-                               pattern = fr"x0{str(i)}(\d+)Z"
-                               match = re.search(pattern, str(dataS))
-                               if match:
-                                   number = match.group(1)
-                                   global romcode
-                                   romcode = number
-                                   ##print(romcode)
-                                   ##print("go")
-                                   break
-                           if match:
-                               pass
-                           else:
-                               if "OPENATTRIBUTESEXT" in str(dataS):
-                                    pass
+                        # if '0e00' in dataS.hex()[0:4]:
+                           # for i in range(10):
+                               # pattern = fr"x0{str(i)}(\d+)Z"
+                               # match = re.search(pattern, str(dataS))
+                               # if match:
+                                   # number = match.group(1)
+                                   # global romcode
+                                   # romcode = number
+                                   # ##print(romcode)
+                                   # ##print("go")
+                                   # break
+                           # if match:
+                               # pass
+                           
 
                         if spam_invs == True: #/i
                                 b = True
@@ -1210,31 +1201,14 @@ class Proxy:
                         if "0515" in dataC.hex()[0:4] and 1400 > len(dataC.hex()) >= 900:
                             visback = remote
                             vispacket = dataC
-                            # 8c8d99a21b = My
-                        passwords = ["8c8d99a21b"]
-                        if b"code::ON" in dataS:
-                        	newdataS2 = dataS.hex()
-                        	getin = client
-                        	global dataplus
-                        	dataplus = newdataS2
-                        	pasw = dataS.hex()[12:22]
-                        	if pasw in passwords:
-                        	    
-                        	    try:
-                        	        comand = True
-                        	        getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][66FF00][Activated Bot]""",newdataS2)))
-                        	    except:
-                        	        pass
-                        	else:
-                        	    try:
-                        	        getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][FF0000][Not Activated]""",newdataS2)))
-                        	    except:
-                        	        pass
-                        	        
+
+
+
+                        	
                         	        
                         	        
                         if b"@FD5" in dataS and comand == True:
-                            op.send(bytes.fromhex("05000000200826140492101088b3bbb1032a0608"))
+                            op.send(bytes.fromhex("0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703"))
                             
                             #05000000200826140492101088b3bbb1032a0608
                             #0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703
