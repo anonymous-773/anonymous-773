@@ -907,21 +907,21 @@ class Proxy:
 
 
             # Level ++
-            global level_increase
-            def level_increase(value6):
-                global increaseL
-                increaseL = value6
-                return increaseL
+            # global level_increase
+            # def level_increase(value6):
+                # global increaseL
+                # increaseL = value6
+                # return increaseL
 
 
 
 
 
-            global youtubers
-            def youtubers(value42):
-                global add_yout
-                add_yout = value42
-                return add_yout
+            # global youtubers
+             # def youtubers(value42):
+                # # global add_yout
+                 # add_yout = value42
+                 # return add_yout
                 
 
 
@@ -1072,9 +1072,9 @@ class Proxy:
                             #print()
                     else:
 
-                        if increaseL == True:
-                            threading.Thread(target=xmodz,args=(levelplus,)).start()
-                            increaseL = False
+                        # if increaseL == True:
+                            # threading.Thread(target=xmodz,args=(levelplus,)).start()
+                            # increaseL = False
 
                         if full == True:               
                             ##("Send info")                    
@@ -1112,12 +1112,13 @@ class Proxy:
                                 restartsock = False
 
                         try:
-                            if '1200' in dataS.hex()[0:4] and b'/info' in dataS and comand == True: #/back
-                                ##("Done")
-                                backto = client
-                                newbackdataS = dataS.hex()
-                                full = True
-                                ##(full)
+                             
+                             if '1200' in dataS.hex()[0:4] and b'/info' in dataS and comand == True: #/back
+                                # ##("Done")
+                                 backto = client
+                                 newbackdataS = dataS.hex()
+                                 full = True
+                                # ##(full)
 
                         except:
                             pass
@@ -1219,51 +1220,62 @@ class Proxy:
                         	        getin.send(bytes.fromhex(gen_msgv2_clan(f"""[b][c][FF0000][Not Activated]""",newdataS2)))
                         	    except:
                         	        pass
-                        if b"@FD5" in dataS and comand == True:
+                        	        
+                        	        
+                        	        
+                        if b"+5" in dataS and comand == True:
                             op.send(bytes.fromhex("0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703"))
                             
                              
 #start klach squad
-                        if b"@FD3" in dataS and comand == True:
+                        if b"+3" in dataS and comand == True:
                             op.send(bytes.fromhex("051500000020cdfdd29898d11f3510a1e346a000f194ae71b48153af0923a6b95c6ad5dfb394"))
 #spam message
-                        if b"@FDS" in dataS and comand == True:
+                        if b"+spam" in dataS and comand == True:
                             msgs =True
-                        if b"#FDS" in dataS and comand == True:
+                        if b"-spam" in dataS and comand == True:
                             msgs =False
 # spam invits
-                        if b"@FDI" in dataS and comand == True:
+                        if b"+inv" in dataS and comand == True:
                             spam_invs =True
-                        if b"#FDI" in dataS and comand == True:
+                        if b"-inv" in dataS and comand == True:
                             spam_invs =False
-                        if b"@ANG_START" in dataS and comand == True:
+                        if b'/try' in dataS:     
+                            
+                                threading.Thread(target=respons , args=[client,dataS,b"/try",b"Onlin"]).start()
+                            
+                        if b"start" in dataS and comand == True:
                                 newdataS2 = dataS.hex()
                                 getin = client
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "Welcom To", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF00FF]PEGA[00FFFF]SUS V2", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "Welcom To FoxyBot ", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF00FF]PEGA[00FFFF]Instagram : @the_foxy999", 0.2)).start()
                                 time.sleep(0.3)
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c]Mode by [F7FE2E]FADAIⓋ", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c]Mode by [F7FE2E]Free For AllⓋ", 0.2)).start()
                                 threading.Thread(target=send_msg, args=(client, dataS.hex(), "[FF8000][b][c]Comands :", 0.2)).start()
                                 time.sleep(0.3)
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """@FD5 [00FFFF] in Squad 5""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FD3 [d44904] in Squad 3""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDS[0000FF]Spam Messages""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDI [d97a5b]Spam invitations""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDNR[ff8345]Stay in Rome""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDB[8ffff2]Back last Squad""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]#my[FF0000]Sensitive info""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDZF [26ed97]Super Mode""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD@@id [FFFF00]General player info""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD++id [f5f595]Advanced player info""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD??id [ed91a5]Clan player info""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD::id [66FF00]Ranked player info""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD==id [c421ff]View Player bio""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDTnum[8878ff] Dances""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDRnum//id[ff7881] Anyone dance""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDYOT[f74b0c]Add youtubers""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDRK==id[e06363]Someone imitating dances """, 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDPS[ed26b5]View Code Rome""", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDTLS[FF8000]dances liste""", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """+5 [00FFFF] GET Squad 5""", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+3 [d44904]GET Squad 3""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+spam[0000FF]Spam Messages""", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+inv [d97a5b]Spam Invitations""", 0.2)).start()
+                                threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]+room[ff8345]Stay in Rome""", 0.2)).start()
+                        
+                                
+                                
+                                
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDB[8ffff2]Back last Squad""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]#my[FF0000]Sensitive info""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDZF [26ed97]Super Mode""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD@@id [FFFF00]General player info""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD++id [f5f595]Advanced player info""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD??id [ed91a5]Clan player info""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD::id [66FF00]Ranked player info""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]PD==id [c421ff]View Player bio""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDTnum[8878ff] Dances""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDRnum//id[ff7881] Anyone dance""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDYOT[f74b0c]Add youtubers""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDRK==id[e06363]Someone imitating dances """, 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDPS[ed26b5]View Code Rome""", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), """[b][c]@FDTLS[FF8000]dances liste""", 0.2)).start()
 
                         if b'GroupID' in dataS and comand == True and mess ==True:
                             mess = False
@@ -1272,95 +1284,100 @@ class Proxy:
                             raks = dor.replace('*', id)
                             client.send(bytes.fromhex(raks))
                             
-                        if b"@FDTLS" in dataS and comand == True:
-                                newdataS2 = dataS.hex()
-                                getin = client
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF8000] قائمة رقصات", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF8000]num :", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][00ffff]رقصات مميزة :", 0.2)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A1", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A2", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A3", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A4", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A5", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A6", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A7", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A8", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A9", 1.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][00ffff]رقصات أسلحة :", 1.5)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B1", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B2", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B3", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B4", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B5", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B6", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B7", 2.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][00ffff]رقصات حيوانات :", 2.5)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C1", 3.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C2", 3.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C3", 3.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C4", 3.0)).start()
-                                threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C5", 3.0)).start()
+                        # if b"@FDTLS" in dataS and comand == True:
+                                # newdataS2 = dataS.hex()
+                                # getin = client
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF8000] قائمة رقصات", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][FF8000]num :", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][00ffff]رقصات مميزة :", 0.2)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A1", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A2", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A3", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A4", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A5", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A6", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A7", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A8", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]A9", 1.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][00ffff]رقصات أسلحة :", 1.5)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B1", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B2", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B3", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B4", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B5", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B6", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]B7", 2.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][00ffff]رقصات حيوانات :", 2.5)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C1", 3.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C2", 3.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C3", 3.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C4", 3.0)).start()
+                                # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C5", 3.0)).start()
                         if b"@my" in dataS and comand == True:
                         	newdataS2 = dataplus
                         	hex_string = dataS.hex()
                         	getin = client
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00ffff]معلومات حساسة...",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00ffff]معلومات حساسة...",newdataS2)))
                         	decoded_text = codecs.decode(hex_string, 'hex').decode('latin-1')
                         	long_text = decoded_text
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] نوع الربط :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] نوع الربط :",newdataS2)))
                         	if 'google' in long_text:
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Google accunt",newdataS2)))
+                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Google accunt",newdataS2)))
                         		ap = 'https'
                         		dp = ''
                         		start_link2 = long_text.find(ap)
                         		end_link2 = long_text.find(dp, start_link2)
                         		link = long_text[start_link2:end_link2]
                         		short_url = shorten_url(link)
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] رابط الحساب :",newdataS2)))
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
-                        	if 'facebook' in long_text:
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00FFFF]Facebook accunt",newdataS2)))
-                        		ap = 'https'
-                        		dp = ''
-                        		start_link2 = long_text.find(ap)
-                        		end_link2 = long_text.find(dp, start_link2)
-                        		link = long_text[start_link2:end_link2]
-                        		short_url = shorten_url(link)
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] رابط الحساب :",newdataS2)))
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
-                        if b"#my" in dataS and comand == True:
-                        	newdataS2 = dataplus
-                        	hex_string = dataS.hex()
-                        	getin = client
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00ffff]Sensitive information...",newdataS2)))
-                        	decoded_text = codecs.decode(hex_string, 'hex').decode('latin-1')
-                        	long_text = decoded_text
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+]accunt type :",newdataS2)))
-                        	if 'google' in long_text:
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Google accunt",newdataS2)))
-                        		ap = 'https'
-                        		dp = ''
-                        		start_link2 = long_text.find(ap)
-                        		end_link2 = long_text.find(dp, start_link2)
-                        		link = long_text[start_link2:end_link2]
-                        		short_url = shorten_url(link)
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] Accunt link :",newdataS2)))
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
-                        	if 'facebook' in long_text:
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00FFFF]Facebook accunt",newdataS2)))
-                        		ap = 'https'
-                        		dp = ''
-                        		start_link2 = long_text.find(ap)
-                        		end_link2 = long_text.find(dp, start_link2)
-                        		link = long_text[start_link2:end_link2]
-                        		short_url = shorten_url(link)
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] Accunt link :",newdataS2)))
-                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c] by[F7FE2E]FADAIⓋ",newdataS2)))
+                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] رابط الحساب :",newdataS2)))
+                        		
+                        		threading.Thread(target=send_msg, args=(client, dataS.hex(), """{short_url}""", 3.0)).start()
+                        	
+                        		
+                        		
+                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
+                        	# if 'facebook' in long_text:
+                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00FFFF]Facebook accunt",newdataS2)))
+                        		# ap = 'https'
+                        		# dp = ''
+                        		# start_link2 = long_text.find(ap)
+                        		# end_link2 = long_text.find(dp, start_link2)
+                        		# link = long_text[start_link2:end_link2]
+                        		# short_url = shorten_url(link)
+                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] رابط الحساب :",newdataS2)))
+                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
+            #             if b"#my" in dataS and comand == True:
+#                        	newdataS2 = dataplus
+#                        	hex_string = dataS.hex()
+#                        	getin = client
+#                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00ffff]Sensitive information...",newdataS2)))
+#                        	decoded_text = codecs.decode(hex_string, 'hex').decode('latin-1')
+#                        	long_text = decoded_text
+#                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+]accunt type :",newdataS2)))
+#                        	if 'google' in long_text:
+#                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Google accunt",newdataS2)))
+#                        		ap = 'https'
+#                        		dp = ''
+#                        		start_link2 = long_text.find(ap)
+#                        		end_link2 = long_text.find(dp, start_link2)
+#                        		link = long_text[start_link2:end_link2]
+#                        		short_url = shorten_url(link)
+#                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] Accunt link :",newdataS2)))
+#                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
+#                        	if 'facebook' in long_text:
+#                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00FFFF]Facebook accunt",newdataS2)))
+#                        		ap = 'https'
+#                        		dp = ''
+#                        		start_link2 = long_text.find(ap)
+#                        		end_link2 = long_text.find(dp, start_link2)
+#                        		link = long_text[start_link2:end_link2]
+#                        		short_url = shorten_url(link)
+#                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] Accunt link :",newdataS2)))
+#                        		getin.send(bytes.fromhex(gen_msgv2_clan(f"""{short_url}""",newdataS2)))
+#                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
+#                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c] by[F7FE2E]FADAIⓋ",newdataS2)))
 
                         if b"@FDB" in dataS and comand == True:
                         	try:
