@@ -1223,12 +1223,12 @@ class Proxy:
                         	        
                         	        
                         	        
-                        if b"+5" in dataS and comand == True:
+                        if b"@FD5" in dataS and comand == True:
                             op.send(bytes.fromhex("0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703"))
                             
                              
 #start klach squad
-                        if b"+3" in dataS and comand == True:
+                        if b"@FD3" in dataS and comand == True:
                             op.send(bytes.fromhex("051500000020cdfdd29898d11f3510a1e346a000f194ae71b48153af0923a6b95c6ad5dfb394"))
 #spam message
                         if b"+spam" in dataS and comand == True:
