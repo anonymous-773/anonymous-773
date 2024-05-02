@@ -1909,7 +1909,7 @@ class Proxy:
                             # dor = dataS.hex()
                             # raks = dor.replace(id_admin, id_view)
                             # MainC.send(bytes.fromhex(raks))
-                         if b"@FDTA1" in dataS and comand == True:
+                        if b"@FDTA1" in dataS and comand == True:
                             id = dataS.hex()[12:22]
                             dor = "050000002008*100520162a1408*1088b3bbb1032a0608*"
                             
@@ -2261,13 +2261,13 @@ class Proxy:
                               # #      break
                         # if add_yout == True:
                             # add_yout = False
-                            from time import sleep
-                            try:
-                                for h in yout_list:
-                                    MainC.send(h)
-                                    sleep(0.2)
-                            except:
-                                pass
+                #           from time import sleep
+#                            try:
+#                                for h in yout_list:
+#                                    MainC.send(h)
+#                                    sleep(0.2)
+#                            except:
+#                                pass
                         if b'/ret' in dataS and '1200' in dataS.hex()[0:4]:
                            clieee.send(lag)
                         if client.send(dataS) <= 0:
