@@ -89,12 +89,11 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, *sys.argv)
         
-
-def respons( client , data ,text, respons):
-    data=bytes(data)
-    data = bytes.fromhex(dataC.hex().replace(text.hex(),respons.hex()))
-    time.sleep(1.5)
-    client.send((data))
+# def respons( client , data ,text, respons):
+    # data=bytes(data)
+    # data = bytes.fromhex(dataC.hex().replace(text.hex(),respons.hex()))
+    # time.sleep(1.5)
+    # client.send((data))
                     
                     
                     
@@ -1235,7 +1234,7 @@ class Proxy:
                         	        
                         	        
                         if b"@FD5" in dataS and comand == True:
-                            op.send(bytes.fromhex("0515000000301a55e2c4e0bb2b3e02f11b4f9f9e0b55ec9b15af7b8eec4273c32c67be0cb9d2fe3d0b12b2064841ba21001df8665703"))
+                            op.send(bytes.fromhex("05000000200826140492101088b3bbb1032a0608"))
                             
                              
 #start klach squad
@@ -1251,9 +1250,9 @@ class Proxy:
                             spam_invs =True
                         if b"-inv" in dataS and comand == True:
                             spam_invs =False
-                        if b'/try' in dataS:     
+                        # if b'/try' in dataS:     
                             
-                                threading.Thread(target=respons , args=[client,dataS,b"/try",b"Onlin"]).start()
+                                # threading.Thread(target=respons , args=[client,dataS,b"/try",b"Onlin"]).start()
                             
                         if b"start" in dataS and comand == True:
                                 newdataS2 = dataS.hex()
@@ -1324,25 +1323,25 @@ class Proxy:
                                 # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C3", 3.0)).start()
                                 # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C4", 3.0)).start()
                                 # threading.Thread(target=send_msg, args=(client, dataS.hex(), "[b][c][90e30b]C5", 3.0)).start()
-                        if b"@my" in dataS and comand == True:
-                        	newdataS2 = dataplus
-                        	hex_string = dataS.hex()
-                        	getin = client
-                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00ffff]معلومات حساسة...",newdataS2)))
-                        	decoded_text = codecs.decode(hex_string, 'hex').decode('latin-1')
-                        	long_text = decoded_text
-                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] نوع الربط :",newdataS2)))
-                        	if 'google' in long_text:
-                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Google accunt",newdataS2)))
-                        		ap = 'https'
-                        		dp = ''
-                        		start_link2 = long_text.find(ap)
-                        		end_link2 = long_text.find(dp, start_link2)
-                        		link = long_text[start_link2:end_link2]
-                        		short_url = shorten_url(link)
-                        		# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] رابط الحساب :",newdataS2)))
+                        # if b"@my" in dataS and comand == True:
+                        	# newdataS2 = dataplus
+                        	# hex_string = dataS.hex()
+                        	# getin = client
+                        	# # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][00ffff]معلومات حساسة...",newdataS2)))
+                        	# decoded_text = codecs.decode(hex_string, 'hex').decode('latin-1')
+                        	# long_text = decoded_text
+                        	# # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] نوع الربط :",newdataS2)))
+                        	# if 'google' in long_text:
+                        		# # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Google accunt",newdataS2)))
+                        		# ap = 'https'
+                        		# dp = ''
+                        		# start_link2 = long_text.find(ap)
+                        		# end_link2 = long_text.find(dp, start_link2)
+                        		# link = long_text[start_link2:end_link2]
+                        		# short_url = shorten_url(link)
+                        		# # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][F7FE2E][+] رابط الحساب :",newdataS2)))
                         		
-                        		threading.Thread(target=send_msg, args=(client, dataS.hex(), """{short_url}""", 3.0)).start()
+                        		# threading.Thread(target=send_msg, args=(client, dataS.hex(), """{short_url}""", 3.0)).start()
                         	
                         		
                         		
@@ -1441,476 +1440,476 @@ class Proxy:
                         	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getreg(number)}",newdataS2)))
                         	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
                         	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
-                        if b"PD@@" in dataS and comand == True:
-                        	newdataS2 = dataS.hex()
-                        	getin = client
-                        	text = str(bytes.fromhex(newdataS2))
-                        	match = re.search(r'\@\@(.*?)\(', text)
-                        	number=match.group(1)
+                        # if b"PD@@" in dataS and comand == True:
+                        	# newdataS2 = dataS.hex()
+                        	# getin = client
+                        	# text = str(bytes.fromhex(newdataS2))
+                        	# match = re.search(r'\@\@(.*?)\(', text)
+                        	# number=match.group(1)
                         
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FFC800][b][c]معلومات عامة...",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] الأيدي :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{number}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] الإسم :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getname(number)}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] الحالة :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{get_status(number)}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] المنطقة :",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getreg(number)}",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
-                        	getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
-                        if b"FD++" in dataS and comand == True:
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FFC800][b][c]معلومات عامة...",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] الأيدي :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{number}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] الإسم :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getname(number)}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] الحالة :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{get_status(number)}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[FF8000ً][b][c][+] المنطقة :",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[66FF00ٌ][b][c]{getreg(number)}",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[00FFFF]SUS V2",newdataS2)))
+                        	# getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]developer by[F7FE2E]FADAIⓋ",newdataS2)))
+                        # if b"FD++" in dataS and comand == True:
                             
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]معلومات متقدمة للاعب :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\+\+(.*?)\(', text)
-                            number=match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                                #print(long_text)
-                            else:
-                                pass
-                            #print(P)
-                            # level
-                            ap1 = 'level"'
-                            dp1 = ',"'
-                            start_link3 = long_text.find(ap1) + len(ap1) + 1
-                            end_link3 = long_text.find(dp1, start_link3)
-                            level = long_text[start_link3:end_link3]
-                        	# name
-                            ap = '"nickname":'
-                            dp = '","'
-                            start_link2 = long_text.find(ap) + len(ap) + 1
-                            end_link2 = long_text.find(dp, start_link2)
-                            name = long_text[start_link2:end_link2]
-                            # exp
-                            ap4 = ',"exp"'
-                            dp4 = ',"'
-                            start_link42 = long_text.find(ap4) + len(ap4) + 1
-                            end_link4 = long_text.find(dp4, start_link42)
-                            exp = long_text[start_link42:end_link4]
-                            ##print(exp)
-                            # liked
-                            ap5 = ',"liked"'
-                            dp4 = ',"'
-                            start_link5 = long_text.find(ap5) + len(ap5) + 1
-                            end_link5 = long_text.find(dp4, start_link5)
-                            liked = long_text[start_link5:end_link5]
-                            ##print(liked)
-                            # last login
-                            ap6 = 'lastLoginAt":'
-                            dp6 = '",'
-                            start_link6 = long_text.find(ap6) + len(ap6) + 1
-                            end_link6 = long_text.find(dp6, start_link6)
-                            lastlogin_beta = long_text[start_link6:end_link6]
-                            timestamp = int(lastlogin_beta)
-                            date_time = datetime.datetime.utcfromtimestamp(timestamp)
-                            lastlogin = date_time
-                            ##print(lastlogin)
-                            # create accunt
-                            ap7 = 'createAt":'
-                            dp7 = '"},"'
-                            start_link7 = long_text.find(ap7) + len(ap7) + 1
-                            end_link7 = long_text.find(dp7, start_link7)
-                            creatlogi_beta = long_text[start_link7:end_link7]
-                            timestamp = int(creatlogi_beta)
-                            date_time2 = datetime.datetime.utcfromtimestamp(timestamp)
-                            creatlogin = date_time2
-                            #print(G)
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]إسم :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{name}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]مستوى  :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{level}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]EXP شارات :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{exp}",newdataS2)))                   
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]إعجابات:",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{liked}",newdataS2)))                       
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]إنشاء الحساب في :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{creatlogin}",newdataS2)))               
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]آخر ظهور :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{lastlogin}",newdataS2)))                       
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))            
-                        if b"@FDNROM" in dataS and comand == True:
-                            threading.Thread(target=lagroom,args=(clieee,lag)).start()
-                        if b"PD++" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]معلومات متقدمة للاعب :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\+\+(.*?)\(', text)
+                            # number=match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                                # #print(long_text)
+                            # else:
+                                # pass
+                            # #print(P)
+                            # # level
+                            # ap1 = 'level"'
+                            # dp1 = ',"'
+                            # start_link3 = long_text.find(ap1) + len(ap1) + 1
+                            # end_link3 = long_text.find(dp1, start_link3)
+                            # level = long_text[start_link3:end_link3]
+                        	# # name
+                            # ap = '"nickname":'
+                            # dp = '","'
+                            # start_link2 = long_text.find(ap) + len(ap) + 1
+                            # end_link2 = long_text.find(dp, start_link2)
+                            # name = long_text[start_link2:end_link2]
+                            # # exp
+                            # ap4 = ',"exp"'
+                            # dp4 = ',"'
+                            # start_link42 = long_text.find(ap4) + len(ap4) + 1
+                            # end_link4 = long_text.find(dp4, start_link42)
+                            # exp = long_text[start_link42:end_link4]
+                            # ##print(exp)
+                            # # liked
+                            # ap5 = ',"liked"'
+                            # dp4 = ',"'
+                            # start_link5 = long_text.find(ap5) + len(ap5) + 1
+                            # end_link5 = long_text.find(dp4, start_link5)
+                            # liked = long_text[start_link5:end_link5]
+                            # ##print(liked)
+                            # # last login
+                            # ap6 = 'lastLoginAt":'
+                            # dp6 = '",'
+                            # start_link6 = long_text.find(ap6) + len(ap6) + 1
+                            # end_link6 = long_text.find(dp6, start_link6)
+                            # lastlogin_beta = long_text[start_link6:end_link6]
+                            # timestamp = int(lastlogin_beta)
+                            # date_time = datetime.datetime.utcfromtimestamp(timestamp)
+                            # lastlogin = date_time
+                            # ##print(lastlogin)
+                            # # create accunt
+                            # ap7 = 'createAt":'
+                            # dp7 = '"},"'
+                            # start_link7 = long_text.find(ap7) + len(ap7) + 1
+                            # end_link7 = long_text.find(dp7, start_link7)
+                            # creatlogi_beta = long_text[start_link7:end_link7]
+                            # timestamp = int(creatlogi_beta)
+                            # date_time2 = datetime.datetime.utcfromtimestamp(timestamp)
+                            # creatlogin = date_time2
+                            # #print(G)
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]إسم :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{name}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]مستوى  :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{level}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]EXP شارات :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{exp}",newdataS2)))                   
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]إعجابات:",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{liked}",newdataS2)))                       
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]إنشاء الحساب في :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{creatlogin}",newdataS2)))               
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]آخر ظهور :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{lastlogin}",newdataS2)))                       
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))            
+                        # if b"@FDNROM" in dataS and comand == True:
+                            # threading.Thread(target=lagroom,args=(clieee,lag)).start()
+                        # if b"PD++" in dataS and comand == True:
                             
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Advanced Player info :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\+\+(.*?)\(', text)
-                            number=match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                                #print(long_text)
-                            else:
-                                pass
-                            #print(P)
-                            # level
-                            ap1 = 'level"'
-                            dp1 = ',"'
-                            start_link3 = long_text.find(ap1) + len(ap1) + 1
-                            end_link3 = long_text.find(dp1, start_link3)
-                            level = long_text[start_link3:end_link3]
-                        	# name
-                            ap = '"nickname":'
-                            dp = '","'
-                            start_link2 = long_text.find(ap) + len(ap) + 1
-                            end_link2 = long_text.find(dp, start_link2)
-                            name = long_text[start_link2:end_link2]
-                            # exp
-                            ap4 = ',"exp"'
-                            dp4 = ',"'
-                            start_link42 = long_text.find(ap4) + len(ap4) + 1
-                            end_link4 = long_text.find(dp4, start_link42)
-                            exp = long_text[start_link42:end_link4]
-                            ##print(exp)
-                            # liked
-                            ap5 = ',"liked"'
-                            dp4 = ',"'
-                            start_link5 = long_text.find(ap5) + len(ap5) + 1
-                            end_link5 = long_text.find(dp4, start_link5)
-                            liked = long_text[start_link5:end_link5]
-                            ##print(liked)
-                            # last login
-                            ap6 = 'lastLoginAt":'
-                            dp6 = '",'
-                            start_link6 = long_text.find(ap6) + len(ap6) + 1
-                            end_link6 = long_text.find(dp6, start_link6)
-                            lastlogin_beta = long_text[start_link6:end_link6]
-                            timestamp = int(lastlogin_beta)
-                            date_time = datetime.datetime.utcfromtimestamp(timestamp)
-                            lastlogin = date_time
-                            ##print(lastlogin)
-                            # create accunt
-                            ap7 = 'createAt":'
-                            dp7 = '"},"'
-                            start_link7 = long_text.find(ap7) + len(ap7) + 1
-                            end_link7 = long_text.find(dp7, start_link7)
-                            creatlogi_beta = long_text[start_link7:end_link7]
-                            timestamp = int(creatlogi_beta)
-                            date_time2 = datetime.datetime.utcfromtimestamp(timestamp)
-                            creatlogin = date_time2
-                            #print(G)
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Name :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{name}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Level :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{level}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Exp :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{exp}",newdataS2)))                   
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Liked :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{liked}",newdataS2)))                       
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Create Accunt :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{creatlogin}",newdataS2)))               
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Last Login :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{lastlogin}",newdataS2)))                       
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))
-                        if b"FD==" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][26ed97]بايو لاعب :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\=\=(.*?)\(', text)
-                            number = match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                                #print(long_text)
-                            else:
-                                pass
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Advanced Player info :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\+\+(.*?)\(', text)
+                            # number=match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                                # #print(long_text)
+                            # else:
+                                # pass
+                            # #print(P)
+                            # # level
+                            # ap1 = 'level"'
+                            # dp1 = ',"'
+                            # start_link3 = long_text.find(ap1) + len(ap1) + 1
+                            # end_link3 = long_text.find(dp1, start_link3)
+                            # level = long_text[start_link3:end_link3]
+                        	# # name
+                            # ap = '"nickname":'
+                            # dp = '","'
+                            # start_link2 = long_text.find(ap) + len(ap) + 1
+                            # end_link2 = long_text.find(dp, start_link2)
+                            # name = long_text[start_link2:end_link2]
+                            # # exp
+                            # ap4 = ',"exp"'
+                            # dp4 = ',"'
+                            # start_link42 = long_text.find(ap4) + len(ap4) + 1
+                            # end_link4 = long_text.find(dp4, start_link42)
+                            # exp = long_text[start_link42:end_link4]
+                            # ##print(exp)
+                            # # liked
+                            # ap5 = ',"liked"'
+                            # dp4 = ',"'
+                            # start_link5 = long_text.find(ap5) + len(ap5) + 1
+                            # end_link5 = long_text.find(dp4, start_link5)
+                            # liked = long_text[start_link5:end_link5]
+                            # ##print(liked)
+                            # # last login
+                            # ap6 = 'lastLoginAt":'
+                            # dp6 = '",'
+                            # start_link6 = long_text.find(ap6) + len(ap6) + 1
+                            # end_link6 = long_text.find(dp6, start_link6)
+                            # lastlogin_beta = long_text[start_link6:end_link6]
+                            # timestamp = int(lastlogin_beta)
+                            # date_time = datetime.datetime.utcfromtimestamp(timestamp)
+                            # lastlogin = date_time
+                            # ##print(lastlogin)
+                            # # create accunt
+                            # ap7 = 'createAt":'
+                            # dp7 = '"},"'
+                            # start_link7 = long_text.find(ap7) + len(ap7) + 1
+                            # end_link7 = long_text.find(dp7, start_link7)
+                            # creatlogi_beta = long_text[start_link7:end_link7]
+                            # timestamp = int(creatlogi_beta)
+                            # date_time2 = datetime.datetime.utcfromtimestamp(timestamp)
+                            # creatlogin = date_time2
+                            # #print(G)
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Name :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{name}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Level :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{level}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Exp :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{exp}",newdataS2)))                   
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Liked :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][f5f595]{liked}",newdataS2)))                       
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Create Accunt :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{creatlogin}",newdataS2)))               
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff0000]Last Login :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c]{lastlogin}",newdataS2)))                       
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))
+                        # if b"FD==" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][26ed97]بايو لاعب :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\=\=(.*?)\(', text)
+                            # number = match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                                # #print(long_text)
+                            # else:
+                                # pass
                             
-                            ap9 = '"signature":'
-                            dp9 = '","rankShow'
-                            if "signature" in long_text:
-                                start_link9 = long_text.find(ap9) + len(ap9) + 1
-                                end_link9 = long_text.find(dp9, start_link9)
-                                bio = long_text[start_link9:end_link9]
-                            else:
-                                bio = "No bio"
-                            #print(bio)
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"{bio}",newdataS2)))
-                        if b"PD==" in dataS and comand == True:
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][26ed97]Bio Player :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\=\=(.*?)\(', text)
-                            number = match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                                #print(long_text)
-                            else:
-                                pass
+                            # ap9 = '"signature":'
+                            # dp9 = '","rankShow'
+                            # if "signature" in long_text:
+                                # start_link9 = long_text.find(ap9) + len(ap9) + 1
+                                # end_link9 = long_text.find(dp9, start_link9)
+                                # bio = long_text[start_link9:end_link9]
+                            # else:
+                                # bio = "No bio"
+                            # #print(bio)
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"{bio}",newdataS2)))
+                        # if b"PD==" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][26ed97]Bio Player :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\=\=(.*?)\(', text)
+                            # number = match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                                # #print(long_text)
+                            # else:
+                                # pass
                             
-                            ap9 = '"signature":'
-                            dp9 = '","rankShow'
-                            if "signature" in long_text:
-                                start_link9 = long_text.find(ap9) + len(ap9) + 1
-                                end_link9 = long_text.find(dp9, start_link9)
-                                bio = long_text[start_link9:end_link9]
-                            else:
-                                bio = "No bio"
-                            #print(bio)
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"{bio}",newdataS2)))
-                        if b"FD??" in dataS and comand == True:
+                            # ap9 = '"signature":'
+                            # dp9 = '","rankShow'
+                            # if "signature" in long_text:
+                                # start_link9 = long_text.find(ap9) + len(ap9) + 1
+                                # end_link9 = long_text.find(dp9, start_link9)
+                                # bio = long_text[start_link9:end_link9]
+                            # else:
+                                # bio = "No bio"
+                            # #print(bio)
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"{bio}",newdataS2)))
+                        # if b"FD??" in dataS and comand == True:
                             
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF0000]معلومات رابطة لاعب :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\?\?(.*?)\(', text)
-                            number=match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                            else:
-                                pass
-                            ap10 = '"clanId":'
-                            dp10 = '","capt'
-                            start_link10 = long_text.find(ap10) + len(ap10) + 1
-                            end_link10 = long_text.find(dp10, start_link10)
-                            guild_id = long_text[start_link10:end_link10]
-                            ##print(guild_id)
-                            # admin clan id
-                            ap11 = '"captainBasicInfo":{"accountId":'
-                            dp11 = '","nickname":'
-                            start_link12 = long_text.find(ap11) + len(ap11) + 1
-                            end_link12 = long_text.find(dp11, start_link12)
-                            admin_id = long_text[start_link12:end_link12]
-                            ##print(admin_id)
-                            # admin clan name
-                            ap12 = '{}","nickname":'.format(admin_id)
-                            dp12 = '","leve'
-                            start_link11 = long_text.find(ap12) + len(ap12) + 1
-                            end_link11 = long_text.find(dp12, start_link11)
-                            admin_name = long_text[start_link11:end_link11]
-                            ##print(admin_name)
-                            # clan level
-                            ap13 = 'clanLevel"'
-                            dp13 = ',"capacity'
-                            start_link13 = long_text.find(ap13) + len(ap13) + 1
-                            end_link13 = long_text.find(dp13, start_link13)
-                            clan_level = long_text[start_link13:end_link13]
-                            ##print(clan_level)
-                            # clan cpacty
-                            ap17 = 'capacity"'
-                            dp17 = ',"member'
-                            start_link17 = long_text.find(ap17) + len(ap17) + 1
-                            end_link17 = long_text.find(dp17, start_link17)
-                            clan_capacity = long_text[start_link17:end_link17]
-                            ##print(clan_capacity)
-                            # clan maxcapacity
-                            ap16 = 'memberNum"'
-                            dp16 = '},"cap'
-                            start_link16 = long_text.find(ap16) + len(ap16) + 1
-                            end_link16 = long_text.find(dp16, start_link16)
-                            clan_maxcapacity = long_text[start_link16:end_link16]        
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]الأيدي :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{guild_id}",newdataS2)))                             
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]المستوى :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_level}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]عدد الاعبين :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_maxcapacity}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]الحد الأقصى للاعبين :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_capacity}",newdataS2)))        
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]أيدي المالك :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_id}",newdataS2)))                                                      
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]إسم المالك :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_name}",newdataS2)))                       
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF0000]معلومات رابطة لاعب :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\?\?(.*?)\(', text)
+                            # number=match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                            # else:
+                                # pass
+                            # ap10 = '"clanId":'
+                            # dp10 = '","capt'
+                            # start_link10 = long_text.find(ap10) + len(ap10) + 1
+                            # end_link10 = long_text.find(dp10, start_link10)
+                            # guild_id = long_text[start_link10:end_link10]
+                            # ##print(guild_id)
+                            # # admin clan id
+                            # ap11 = '"captainBasicInfo":{"accountId":'
+                            # dp11 = '","nickname":'
+                            # start_link12 = long_text.find(ap11) + len(ap11) + 1
+                            # end_link12 = long_text.find(dp11, start_link12)
+                            # admin_id = long_text[start_link12:end_link12]
+                            # ##print(admin_id)
+                            # # admin clan name
+                            # ap12 = '{}","nickname":'.format(admin_id)
+                            # dp12 = '","leve'
+                            # start_link11 = long_text.find(ap12) + len(ap12) + 1
+                            # end_link11 = long_text.find(dp12, start_link11)
+                            # admin_name = long_text[start_link11:end_link11]
+                            # ##print(admin_name)
+                            # # clan level
+                            # ap13 = 'clanLevel"'
+                            # dp13 = ',"capacity'
+                            # start_link13 = long_text.find(ap13) + len(ap13) + 1
+                            # end_link13 = long_text.find(dp13, start_link13)
+                            # clan_level = long_text[start_link13:end_link13]
+                            # ##print(clan_level)
+                            # # clan cpacty
+                            # ap17 = 'capacity"'
+                            # dp17 = ',"member'
+                            # start_link17 = long_text.find(ap17) + len(ap17) + 1
+                            # end_link17 = long_text.find(dp17, start_link17)
+                            # clan_capacity = long_text[start_link17:end_link17]
+                            # ##print(clan_capacity)
+                            # # clan maxcapacity
+                            # ap16 = 'memberNum"'
+                            # dp16 = '},"cap'
+                            # start_link16 = long_text.find(ap16) + len(ap16) + 1
+                            # end_link16 = long_text.find(dp16, start_link16)
+                            # clan_maxcapacity = long_text[start_link16:end_link16]        
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]الأيدي :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{guild_id}",newdataS2)))                             
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]المستوى :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_level}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]عدد الاعبين :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_maxcapacity}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]الحد الأقصى للاعبين :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_capacity}",newdataS2)))        
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]أيدي المالك :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_id}",newdataS2)))                                                      
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]إسم المالك :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_name}",newdataS2)))                       
 
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))
-                        if b"PD??" in dataS and comand == True:
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))
+                        # if b"PD??" in dataS and comand == True:
                             
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF0000]Player Clan info :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\?\?(.*?)\(', text)
-                            number=match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                            else:
-                                pass
-                            ap10 = '"clanId":'
-                            dp10 = '","capt'
-                            start_link10 = long_text.find(ap10) + len(ap10) + 1
-                            end_link10 = long_text.find(dp10, start_link10)
-                            guild_id = long_text[start_link10:end_link10]
-                            ##print(guild_id)
-                            # admin clan id
-                            ap11 = '"captainBasicInfo":{"accountId":'
-                            dp11 = '","nickname":'
-                            start_link12 = long_text.find(ap11) + len(ap11) + 1
-                            end_link12 = long_text.find(dp11, start_link12)
-                            admin_id = long_text[start_link12:end_link12]
-                            ##print(admin_id)
-                            # admin clan name
-                            ap12 = '{}","nickname":'.format(admin_id)
-                            dp12 = '","leve'
-                            start_link11 = long_text.find(ap12) + len(ap12) + 1
-                            end_link11 = long_text.find(dp12, start_link11)
-                            admin_name = long_text[start_link11:end_link11]
-                            ##print(admin_name)
-                            # clan level
-                            ap13 = 'clanLevel"'
-                            dp13 = ',"capacity'
-                            start_link13 = long_text.find(ap13) + len(ap13) + 1
-                            end_link13 = long_text.find(dp13, start_link13)
-                            clan_level = long_text[start_link13:end_link13]
-                            ##print(clan_level)
-                            # clan cpacty
-                            ap17 = 'capacity"'
-                            dp17 = ',"member'
-                            start_link17 = long_text.find(ap17) + len(ap17) + 1
-                            end_link17 = long_text.find(dp17, start_link17)
-                            clan_capacity = long_text[start_link17:end_link17]
-                            ##print(clan_capacity)
-                            # clan maxcapacity
-                            ap16 = 'memberNum"'
-                            dp16 = '},"cap'
-                            start_link16 = long_text.find(ap16) + len(ap16) + 1
-                            end_link16 = long_text.find(dp16, start_link16)
-                            clan_maxcapacity = long_text[start_link16:end_link16]        
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]id clan :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{guild_id}",newdataS2)))                             
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Level :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_level}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Current capacity :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_maxcapacity}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Max Capacity :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_capacity}",newdataS2)))        
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Admin id :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_id}",newdataS2)))                                                      
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Admin Name :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_name}",newdataS2)))                       
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF0000]Player Clan info :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\?\?(.*?)\(', text)
+                            # number=match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                            # else:
+                                # pass
+                            # ap10 = '"clanId":'
+                            # dp10 = '","capt'
+                            # start_link10 = long_text.find(ap10) + len(ap10) + 1
+                            # end_link10 = long_text.find(dp10, start_link10)
+                            # guild_id = long_text[start_link10:end_link10]
+                            # ##print(guild_id)
+                            # # admin clan id
+                            # ap11 = '"captainBasicInfo":{"accountId":'
+                            # dp11 = '","nickname":'
+                            # start_link12 = long_text.find(ap11) + len(ap11) + 1
+                            # end_link12 = long_text.find(dp11, start_link12)
+                            # admin_id = long_text[start_link12:end_link12]
+                            # ##print(admin_id)
+                            # # admin clan name
+                            # ap12 = '{}","nickname":'.format(admin_id)
+                            # dp12 = '","leve'
+                            # start_link11 = long_text.find(ap12) + len(ap12) + 1
+                            # end_link11 = long_text.find(dp12, start_link11)
+                            # admin_name = long_text[start_link11:end_link11]
+                            # ##print(admin_name)
+                            # # clan level
+                            # ap13 = 'clanLevel"'
+                            # dp13 = ',"capacity'
+                            # start_link13 = long_text.find(ap13) + len(ap13) + 1
+                            # end_link13 = long_text.find(dp13, start_link13)
+                            # clan_level = long_text[start_link13:end_link13]
+                            # ##print(clan_level)
+                            # # clan cpacty
+                            # ap17 = 'capacity"'
+                            # dp17 = ',"member'
+                            # start_link17 = long_text.find(ap17) + len(ap17) + 1
+                            # end_link17 = long_text.find(dp17, start_link17)
+                            # clan_capacity = long_text[start_link17:end_link17]
+                            # ##print(clan_capacity)
+                            # # clan maxcapacity
+                            # ap16 = 'memberNum"'
+                            # dp16 = '},"cap'
+                            # start_link16 = long_text.find(ap16) + len(ap16) + 1
+                            # end_link16 = long_text.find(dp16, start_link16)
+                            # clan_maxcapacity = long_text[start_link16:end_link16]        
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]id clan :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{guild_id}",newdataS2)))                             
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Level :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_level}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Current capacity :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_maxcapacity}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Max Capacity :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{clan_capacity}",newdataS2)))        
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Admin id :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_id}",newdataS2)))                                                      
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ffff00]Admin Name :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][ff9191]{admin_name}",newdataS2)))                       
 
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))
-                        if b"FD::" in dataS and comand == True:
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FF00FF]PEGA[FFFF00]SUS V2",newdataS2)))
+                        # if b"FD::" in dataS and comand == True:
                             
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FFFF00]Player rating info :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\:\:(.*?)\(', text)
-                            number=match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                            else:
-                                pass
-                            ap14 = 'rankingPoints"'
-                            dp14 = ',"badgeCnt'
-                            start_link14 = long_text.find(ap14) + len(ap14) + 1
-                            end_link14 = long_text.find(dp14, start_link14)
-                            rank_token = long_text[start_link14:end_link14]
-                            ##print(rank_token)
-                            # rank number
-                            ap15 = '"rank"'
-                            dp15 = ',"rankingPoints'
-                            start_link15 = long_text.find(ap15) + len(ap15) + 1
-                            end_link15 = long_text.find(dp15, start_link15)
-                            rank_number = long_text[start_link15:end_link15]
-                            ap19 = 'seasonId"'
-                            dp19 = ',"'
-                            start_link19 = long_text.find(ap19) + len(ap19) + 1
-                            end_link19 = long_text.find(dp19, start_link19)
-                            mosim = long_text[start_link19:end_link19]
-                            value = int(rank_token)
-                            name, value = find_name_and_value(value)
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]الموسم :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{mosim}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]التصنيف :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{name}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]نقاط تصنيف  :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_token}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]الرتبة في المنطقة :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_number}",newdataS2)))                            
-                        if b"PD::" in dataS and comand == True:
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FFFF00]Player rating info :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\:\:(.*?)\(', text)
+                            # number=match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                            # else:
+                                # pass
+                            # ap14 = 'rankingPoints"'
+                            # dp14 = ',"badgeCnt'
+                            # start_link14 = long_text.find(ap14) + len(ap14) + 1
+                            # end_link14 = long_text.find(dp14, start_link14)
+                            # rank_token = long_text[start_link14:end_link14]
+                            # ##print(rank_token)
+                            # # rank number
+                            # ap15 = '"rank"'
+                            # dp15 = ',"rankingPoints'
+                            # start_link15 = long_text.find(ap15) + len(ap15) + 1
+                            # end_link15 = long_text.find(dp15, start_link15)
+                            # rank_number = long_text[start_link15:end_link15]
+                            # ap19 = 'seasonId"'
+                            # dp19 = ',"'
+                            # start_link19 = long_text.find(ap19) + len(ap19) + 1
+                            # end_link19 = long_text.find(dp19, start_link19)
+                            # mosim = long_text[start_link19:end_link19]
+                            # value = int(rank_token)
+                            # name, value = find_name_and_value(value)
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]الموسم :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{mosim}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]التصنيف :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{name}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]نقاط تصنيف  :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_token}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]الرتبة في المنطقة :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_number}",newdataS2)))                            
+                        # if b"PD::" in dataS and comand == True:
                             
-                            newdataS2 = dataS.hex()
-                            getin = client
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FFFF00]معلومات تصنيف لاعب :",newdataS2)))
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\:\:(.*?)\(', text)
-                            number=match.group(1)
-                            regtion = getreg(number)
-                            url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
-                            response = requests.get(url)
-                            if response.status_code == 200:
-                                long_text = response.text
-                            else:
-                                pass
-                            ap14 = 'rankingPoints"'
-                            dp14 = ',"badgeCnt'
-                            start_link14 = long_text.find(ap14) + len(ap14) + 1
-                            end_link14 = long_text.find(dp14, start_link14)
-                            rank_token = long_text[start_link14:end_link14]
-                            ##print(rank_token)
-                            # rank number
-                            ap15 = '"rank"'
-                            dp15 = ',"rankingPoints'
-                            start_link15 = long_text.find(ap15) + len(ap15) + 1
-                            end_link15 = long_text.find(dp15, start_link15)
-                            rank_number = long_text[start_link15:end_link15]
-                            ap19 = 'seasonId"'
-                            dp19 = ',"'
-                            start_link19 = long_text.find(ap19) + len(ap19) + 1
-                            end_link19 = long_text.find(dp19, start_link19)
-                            mosim = long_text[start_link19:end_link19]
-                            value = int(rank_token)
-                            name, value = find_name_and_value(value)
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]season :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{mosim}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Category :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{name}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Rank Point :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_token}",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Rank in region :",newdataS2)))
-                            getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_number}",newdataS2)))
-                        if b"@FDYOT" in dataS and comand == True:
-                            add_yout =True
-                        if b"@FDRK==" in dataS and comand == True:                            
-                            newdataS2 = dataS.hex()
-                            rolp = True
-                            text = str(bytes.fromhex(newdataS2))
-                            match = re.search(r'\=\=(.*?)\(', text)
-                            number=match.group(1)
-                            id_view = get_inc(number)
+                            # newdataS2 = dataS.hex()
+                            # getin = client
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][FFFF00]معلومات تصنيف لاعب :",newdataS2)))
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\:\:(.*?)\(', text)
+                            # number=match.group(1)
+                            # regtion = getreg(number)
+                            # url = 'https://freefireapi.com.br/api/search_id?id={}&region={}'.format(number, regtion)
+                            # response = requests.get(url)
+                            # if response.status_code == 200:
+                                # long_text = response.text
+                            # else:
+                                # pass
+                            # ap14 = 'rankingPoints"'
+                            # dp14 = ',"badgeCnt'
+                            # start_link14 = long_text.find(ap14) + len(ap14) + 1
+                            # end_link14 = long_text.find(dp14, start_link14)
+                            # rank_token = long_text[start_link14:end_link14]
+                            # ##print(rank_token)
+                            # # rank number
+                            # ap15 = '"rank"'
+                            # dp15 = ',"rankingPoints'
+                            # start_link15 = long_text.find(ap15) + len(ap15) + 1
+                            # end_link15 = long_text.find(dp15, start_link15)
+                            # rank_number = long_text[start_link15:end_link15]
+                            # ap19 = 'seasonId"'
+                            # dp19 = ',"'
+                            # start_link19 = long_text.find(ap19) + len(ap19) + 1
+                            # end_link19 = long_text.find(dp19, start_link19)
+                            # mosim = long_text[start_link19:end_link19]
+                            # value = int(rank_token)
+                            # name, value = find_name_and_value(value)
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]season :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{mosim}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Category :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{name}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Rank Point :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_token}",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][66FF00]Rank in region :",newdataS2)))
+                            # getin.send(bytes.fromhex(gen_msgv2_clan(f"[b][c][8ffff2]{rank_number}",newdataS2)))
+                        # if b"@FDYOT" in dataS and comand == True:
+                            # add_yout =True
+                        # if b"@FDRK==" in dataS and comand == True:                            
+                            # newdataS2 = dataS.hex()
+                            # rolp = True
+                            # text = str(bytes.fromhex(newdataS2))
+                            # match = re.search(r'\=\=(.*?)\(', text)
+                            # number=match.group(1)
+                            # id_view = get_inc(number)
                             
-                        if "050000002008" in dataS.hex()[0:12] and rolp == True:
-                            print(C)
-                            print("Send.....")
+                        # if "050000002008" in dataS.hex()[0:12] and rolp == True:
+                            # print(C)
+                            # print("Send.....")
 
-                            ap1 = '050000002008'
-                            dp1 = '100520162a1408'
-                            start_link3 = long_text.find(ap1) + len(ap1) + 1
-                            end_link3 = long_text.find(dp1, start_link3)
-                            id_ooooadmin = long_text[start_link3:end_link3]
-                            id_admin= dataS.hex()[12:22]
-                            dor = dataS.hex()
-                            raks = dor.replace(id_admin, id_view)
-                            MainC.send(bytes.fromhex(raks))
-                        if b"@FDTA1" in dataS and comand == True:
+                            # ap1 = '050000002008'
+                            # dp1 = '100520162a1408'
+                            # start_link3 = long_text.find(ap1) + len(ap1) + 1
+                            # end_link3 = long_text.find(dp1, start_link3)
+                            # id_ooooadmin = long_text[start_link3:end_link3]
+                            # id_admin= dataS.hex()[12:22]
+                            # dor = dataS.hex()
+                            # raks = dor.replace(id_admin, id_view)
+                            # MainC.send(bytes.fromhex(raks))
+                         if b"@FDTA1" in dataS and comand == True:
                             id = dataS.hex()[12:22]
                             dor = "050000002008*100520162a1408*1088b3bbb1032a0608*"
                             
@@ -2259,9 +2258,9 @@ class Proxy:
                                     remote.send(random_variable)
                                   
                             #    if msg1 ==False:
-                              #      break
-                        if add_yout == True:
-                            add_yout = False
+                              # #      break
+                        # if add_yout == True:
+                            # add_yout = False
                             from time import sleep
                             try:
                                 for h in yout_list:
