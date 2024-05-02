@@ -92,7 +92,7 @@ def restart_program():
 
 def respons( client , data ,text, respons):
     data=bytes(data)
-    data = bytes.fromhex(data.hex().replace(text.hex(),respons.hex()))
+    data = bytes.fromhex(dataC.hex().replace(text.hex(),respons.hex()))
     time.sleep(1.5)
     client.send((data))
                     
