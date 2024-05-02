@@ -89,6 +89,7 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, *sys.argv)
         
+
 def respons( client , data ,text, respons):
     data=bytes(data)
     data = bytes.fromhex(data.hex().replace(text.hex(),respons.hex()))
