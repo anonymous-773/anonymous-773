@@ -84,6 +84,11 @@ def gen_msgv3(packet , replay):
         finallyPacket = hedar + NewpaketLength +paketBody + NewPyloadLength +pyloadbody2+NewTextLength+ replay + pyloadTile
 
         return str(finallyPacket)
+        
+def restart_program():
+    python = sys.executable
+    os.execl(python, python, *sys.argv)
+        
 
 def send_msg(sock, packet, content, delay:int):
         time.sleep(delay)
@@ -2248,3 +2253,4 @@ class Proxy:
 def startt():
         Proxy().runs('127.0.0.1',7000)
 startt()
+restart_program()
