@@ -121,7 +121,7 @@ clienttsocket =None
 socktion =None
 SOCKS_VERSION = 5
 packet =b''
-# full = False
+full = False
 #
 ####
 
@@ -541,7 +541,7 @@ def lagroom(cli,lg):
 from time import sleep
 
 global cmode
-# cmode = False
+cmode = False
 # def crmode(value7):
     # global cmode
     # cmode = value7
@@ -1121,7 +1121,7 @@ class Proxy:
                                 # # ##("Done")
                                  # backto = client
                                  # newbackdataS = dataS.hex()
-                                 # full = True
+                                 #full = True
                                 # # ##(full)
 
                         
